@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口琴社活动介绍</title>
+<style>
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    min-height:100vh;
+    padding:34px 16px;
+    font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;
+    line-height:1.8;
+    color:#263238;
+    position:relative;
+    background:
+      radial-gradient(circle at 12% 10%, rgba(255,183,3,.24), transparent 28%),
+      radial-gradient(circle at 88% 22%, rgba(31,111,235,.18), transparent 32%),
+      radial-gradient(circle at 50% 92%, rgba(0,180,160,.14), transparent 36%),
+      linear-gradient(135deg,#f8fbff 0%,#fdf8ee 50%,#eefaf7 100%);
+    background-attachment:fixed;
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background-image:radial-gradient(rgba(31,111,235,.10) 1px, transparent 1px);
+    background-size:26px 26px;
+    opacity:.5;
+  }
+  .bg-notes{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  .bg-notes span{
+    position:absolute;
+    bottom:-12vh;
+    left:var(--x);
+    font-size:var(--size);
+    color:rgba(31,111,235,.16);
+    font-family:Georgia,serif;
+    animation:floatUp var(--d) linear infinite;
+    animation-delay:var(--delay);
+  }
+  @keyframes floatUp{
+    0%{transform:translateY(0) rotate(0deg);opacity:0;}
+    10%{opacity:.6;}
+    100%{transform:translateY(-118vh) rotate(30deg);opacity:0;}
+  }
+  .card{
+    position:relative;
+    z-index:1;
+    max-width:860px;
+    margin:0 auto;
+    padding:32px 30px;
+    background:rgba(255,255,255,.9);
+    border:1px solid rgba(255,255,255,.95);
+    border-radius:22px;
+    box-shadow:0 16px 48px rgba(15,23,42,.13);
+    backdrop-filter:blur(12px);
+  }
+  h1{
+    margin-top:0;
+    color:#0b4fb3;
+    font-size:2rem;
+    line-height:1.35;
+  }
+  h1::after{
+    content:"";
+    display:block;
+    width:76px;
+    height:6px;
+    margin-top:10px;
+    border-radius:999px;
+    background:linear-gradient(90deg,#ffb703,#f97316);
+  }
+  h2{
+    color:#1f6feb;
+    margin-top:28px;
+    padding-left:13px;
+    border-left:6px solid #ffb703;
+    font-size:1.3rem;
+  }
+  li{margin:9px 0;}
+  .back{
+    display:inline-block;
+    margin-top:22px;
+    padding:11px 22px;
+    border-radius:999px;
+    background:linear-gradient(135deg,#1f6feb,#0b4fb3);
+    color:#fff;
+    text-decoration:none;
+    font-weight:800;
+    box-shadow:0 8px 20px rgba(31,111,235,.28);
+    transition:transform .2s, box-shadow .2s;
+  }
+  .back:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(31,111,235,.4);
+  }
+  @media(max-width:600px){
+    .card{padding:24px 18px;}
+    h1{font-size:1.6rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-notes" aria-hidden="true">
+  <span style="--x:8%;--d:24s;--delay:0s;--size:30px;">♪</span>
+  <span style="--x:30%;--d:30s;--delay:5s;--size:22px;">♫</span>
+  <span style="--x:56%;--d:26s;--delay:8s;--size:34px;">♬</span>
+  <span style="--x:82%;--d:28s;--delay:3s;--size:24px;">♩</span>
+</div>
+
+<div class="card">
+  <h1>口琴社活动介绍</h1>
+  <p>口琴社以“轻松学音乐、一起上舞台”为宗旨，面向零基础和有一定基础的成员开展口琴教学、合奏排练、校园演出和音乐交流活动。</p>
+
+  <h2>常规活动</h2>
+  <ul>
+    <li>每周基础教学：持琴姿势、呼吸方法、单音练习、简单乐理与入门曲目。</li>
+    <li>合奏排练：分声部练习、节奏训练、重奏与小型乐队合作。</li>
+    <li>曲谱分享：流行歌曲、民谣、动漫音乐和经典作品的口琴改编。</li>
+    <li>校园演出：草坪音乐会、社团文化节、迎新晚会和期末汇报演出。</li>
+  </ul>
+
+  <h2>本学期重点活动</h2>
+  <p>3月举行新成员见面会和口琴基础教学公开课；4月开展合奏训练与校园草坪音乐会；5月至6月进行期末汇报节目排练与正式演出。欢迎喜欢音乐、愿意坚持练习的同学加入我们。</p>
+
+  <a class="back" href="work2.html">← 返回口琴社招新网页</a>
+</div>
+
+</body>
+</html>
