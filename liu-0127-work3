@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>外语读本交流夜 · Foreign Book Meetup</title>
+<style>
+    /* ================= 页面整体 ================= */
+    body {
+        margin: 0;
+        padding: 40px 16px;
+        background-color: #cbe2c4;
+        text-align: center;
+        font-family: "Microsoft YaHei", "Hiragino Sans GB", Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #33402f;
+    }
+
+    /* ========== 作业要求的 .page 样式 ========== */
+    .page {
+        display: inline-block;
+        background-color: #E6F8E0;
+        box-shadow: 0 0 30px rgba(80, 58, 35, 0.25);
+        text-align: left;
+        max-width: 720px;
+    }
+
+    /* ================= 五个区域的内边距 ================= */
+    .header, .intro-area, .table-area, .link-area, .notice {
+        padding: 10px 40px;
+    }
+
+    /* ================= 并集选择器 ================= */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: Georgia, "Times New Roman", "Microsoft YaHei", serif;
+        line-height: 1.4;
+        margin: 0 0 14px 0;
+    }
+    h1 { color: #1e5631; }
+    h2 { color: #2e7d32; }
+    h3 { color: #00695c; }
+    h4 { color: #4527a0; }
+    h5 { color: #8e24aa; }
+
+    /* ================= ① 顶部标题区 ================= */
+    .header {
+        padding-top: 38px;
+        padding-bottom: 20px;
+        text-align: center;
+        border-bottom: 3px double #a8d5a0;
+    }
+    .header h1 {
+        font-size: 28px;
+        letter-spacing: 1px;
+        margin: 0;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    }
+
+    /* ================= ② 活动介绍区 ================= */
+    .intro-area p {
+        margin: 0 0 16px 0;
+        text-align: justify;
+    }
+
+    /* ============ ID 选择器 ============ */
+    p#intro {
+        font-size: 18px;
+        color: #c0392b;
+        background-color: #fff5e6;
+        border-left: 6px solid #f0b429;
+        padding: 14px 18px;
+        border-radius: 0 8px 8px 0;
+    }
+
+    /* ================= ③ 报名信息表格区 ================= */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 15px;
+        margin: 8px 0 24px 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    th, td {
+        border: 1px solid #a8d5a0;
+        padding: 10px 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #8bc34a;
+        color: #ffffff;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    tr:nth-child(even) td { background-color: #f4faf0; }
+    tr:nth-child(odd) td { background-color: #ffffff; }
+    tr:hover td { background-color: #e8f5e9; }
+
+    /* ====== 后代选择器 ====== */
+    div table a {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #2e7d32;
+        background-color: #dcedc8;
+        padding: 3px 12px;
+        border-radius: 12px;
+        font-size: 14px;
+    }
+
+    /* ================= 链接伪类 ================= */
+    a:link { color: #2f5d3a; text-decoration: none; }
+    a:visited { color: #7b5ea7; }
+    a:hover { color: #d35400; text-decoration: underline; }
+    a:active { color: #b03a2e; }
+
+    /* ================= ④ 页面链接区 ================= */
+    .link-area {
+        background-color: #f4fcf1;
+        border-top: 1px dashed #b6dcaa;
+        border-bottom: 1px dashed #b6dcaa;
+        margin: 0 20px;
+    }
+    
+    /* 上下排列与居中 */
+    .link-box {
+        text-align: center;
+        padding: 10px 0;
+    }
+    .link-box a {
+        display: block;           
+        margin: 12px auto;        
+        width: fit-content;       
+        padding: 8px 28px;
+        border-radius: 25px;
+        font-size: 16px;
+        transition: all 0.3s;
+    }
+    
+    /* 带类名的链接：鲜艳颜色 */
+    a.red, a.red:link, a.red:visited {
+        color: #d32f2f; 
+        background-color: #ffebee;
+        border: 1px solid #ef9a9a;
+        box-shadow: 0 2px 5px rgba(192, 57, 43, 0.1);
+    }
+    a.blue, a.blue:link, a.blue:visited {
+        color: #1565c0; 
+        background-color: #e3f2fd;
+        border: 1px solid #90caf9;
+        box-shadow: 0 2px 5px rgba(27, 108, 168, 0.1);
+    }
+    a.red:hover { background-color: #ffcdd2; color: #b71c1c; text-decoration: none; }
+    a.blue:hover { background-color: #bbdefb; color: #0d47a1; text-decoration: none; }
+
+    /* ================= ⑤ 底部公告区 ================= */
+    .notice {
+        padding-bottom: 40px;
+    }
+    .notice p {
+        font-size: 14px;
+        color: #4b5a44;
+        margin: 0;
+        background-color: #e8f5e9;
+        padding: 16px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #81c784;
+    }
+
+    /* ================= 伪元素 ================= */
+    /* 全局 p 首字放大效果（满足作业要求） */
+    p::first-letter {
+        font-size: 1.6em;
+        font-weight: 900;
+        color: #2e7d32;
+        font-family: Georgia, serif;
+    }
+    
+    /* 重要提示的“重”字加粗变红 */
+    p#intro::first-letter {
+        color: #c0392b;
+        font-weight: 900; 
+        text-shadow: 1px 0 0 currentColor, -1px 0 0 currentColor; 
+    }
+
+    /* 【新增】针对公告区：重置首字样式，使其跟后面的文字完全一样 */
+    .notice p::first-letter {
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+        font-family: inherit;
+        text-shadow: none;
+    }
+    
+    /* div 首行伪元素 */
+    div::first-line {
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+    <!-- ① 顶部标题区 -->
+    <div class="header">
+        <h1>外语读本交流夜 · Foreign Book Meetup</h1>
+    </div>
+
+    <!-- ② 活动介绍区 -->
+    <div class="intro-area">
+        <h2 id="intro">活动介绍 · About the Meetup</h2>
+        <p>外语读本交流夜是一个以“读原文、说真心话”为宗旨的社团。Every month we choose one foreign book, read it in the original language, and share our feelings in Chinese, English or any language you like. 我们相信，语言只是一座桥梁，故事才是真正的终点。</p>
+        <p>每一期活动分为三个环节：自由阅读 40 分钟、分组讨论 40 分钟，最后留 20 分钟由一位同学做主题分享。无论你是刚读完第一本分级读物的新手，还是能啃下原版长篇的老读者，都能在这里找到同频的伙伴。</p>
+        <p id="intro">重要提示：本期名额限 20 人，请提前十分钟到场签到；首次参加的同学可携带一本自己最喜爱的外语读本，用于现场交换阅读。</p>
+    </div>
+
+    <!-- ③ 活动报名信息表格区 -->
+    <div class="table-area">
+        <h3>本期报名信息 · Sign-up List</h3>
+        <table>
+            <tr>
+                <th>姓名</th>
+                <th>交流读本</th>
+                <th>语言等级</th>
+                <th>书单详情</th>
+            </tr>
+            <tr>
+                <td>Sofia Martinez</td>
+                <td>Pride and Prejudice</td>
+                <td>托福必读</td>
+                <td><a href="#">查看书单</a></td>
+            </tr>
+            <tr>
+                <td>林知远</td>
+                <td>Le Petit Prince</td>
+                <td>GMT 必读</td>
+                <td><a href="#">查看书单</a></td>
+            </tr>
+            <tr>
+                <td>苏晓棠</td>
+                <td>挪威的森林（日文版）</td>
+                <td>N2 阅读级</td>
+                <td><a href="#">查看书单</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ④ 页面链接区 -->
+    <div class="link-area">
+        <h4>更多入口 · More Links</h4>
+        <div class="link-box">
+            <a class="red" href="https://hongchenwusdnu.github.io/bookstore/job4.html">查看往期活动照片</a>
+            <a class="blue" href="https://1195794857.github.io/Web-Homework/homework2/liu-0127-work2.html ">在线咨询活动详情</a>
+        </div>
+    </div>
+
+    <!-- ⑤ 底部公告区 -->
+    <div class="notice">
+        <h5>社团公告 · Notice</h5>
+        <p>
+            公告一：本学期交流活动固定在每周三晚 19:00—21:00，地点为图书馆三楼 302 室。<br>
+            公告二：新增日语、法语、西班牙语三个读本角，可到前台登记借阅。<br>
+            公告三：连续参加满三次活动的同学，可获赠社团定制书签一枚。
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
